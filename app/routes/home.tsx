@@ -1,0 +1,8 @@
+import Hero from "~/components/Hero";
+export default function Home() {
+  return (
+    <main className="relative h-[80vh] w-full overflow-hidden">
+      <Hero />
+    </main>
+  );
+}
