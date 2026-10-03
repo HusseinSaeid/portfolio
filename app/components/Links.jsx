@@ -10,7 +10,7 @@ const DEFAULT_CONTACT_LINKS = [
   {
     name: "LinkedIn",
     handle: "Hussein El Said",
-    href: "https://www.linkedin.com/in/hussein-el-saeid-557a62418/",
+    href: "https://www.linkedin.com/in/hussein-el-said-557a62418/",
     icon: FaLinkedin,
   },
   {
