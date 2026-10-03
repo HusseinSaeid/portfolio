@@ -1,4 +1,4 @@
-# ⚡ Minimalist Futuristic Portfolio
+#  Minimalist Futuristic Portfolio
 
 > A sleek, high-performance personal developer portfolio built with **React Router v7**, **Vite**, and **Tailwind CSS v4**, connected to an external **Sanity CMS** backend. Engineered with a futuristic design system, native CSS View Transitions, and a custom dual-theme engine.
 
@@ -11,7 +11,7 @@
 
 ---
 
-## 🎨 Design System & Theme Architecture
+##  Design System & Theme Architecture
 
 * **Dual Theme Engine:**
   * **Dark Mode (`.dark`):** High-contrast obsidian void (`#121418`), elevated surface layers (`#1a1d23` / `#1e2229`), glowing borders, and electric blue brand accents (`#3b82f6`).
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Main Portfolio Sections
+##   Main Portfolio Sections
 
 | Section | Description | Data Source |
 | :--- | :--- | :---: |
@@ -46,7 +46,7 @@
 
 ---
 
-## 📂 Project Structure
+##   Project Structure
 
 ```text
 portfolio/
@@ -73,7 +73,7 @@ portfolio/
 
 ---
 
-## 🚀 Getting Started
+##   Getting Started
 
 ### Prerequisites
 
@@ -114,7 +114,7 @@ Open `http://localhost:5173` in your browser.
 
 ---
 
-## 🐳 Docker Deployment
+##   Docker Deployment
 
 Build and run the portfolio locally using Docker:
 
