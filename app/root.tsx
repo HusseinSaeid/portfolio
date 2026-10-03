@@ -12,7 +12,53 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { ThemeProvider } from "~/contexts/theme-context";
 
+// 1. Root Meta Export (Default fallback for all routes)
+export const meta: Route.MetaFunction = () => {
+  return [
+    { title: "Hussein — Full-Stack Developer & Software Engineer" },
+    {
+      name: "description",
+      content:
+        "Minimalist, futuristic personal portfolio of Hussein — Full-Stack Developer specializing in React, React Router v7, TypeScript, and Sanity CMS.",
+    },
+    {
+      name: "keywords",
+      content:
+        "Hussein, Portfolio, Web Developer, Full-Stack Engineer, React, React Router, TypeScript, Sanity CMS, Tailwind CSS",
+    },
+    { name: "author", content: "Hussein" },
+    { name: "robots", content: "index, follow" },
+
+    // Open Graph / Facebook
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "Hussein Portfolio" },
+    {
+      property: "og:title",
+      content: "Hussein — Full-Stack Developer & Software Engineer",
+    },
+    {
+      property: "og:description",
+      content:
+        "Minimalist, futuristic personal portfolio featuring web development projects, technical blog posts, and interactive experiences.",
+    },
+    { property: "og:image", content: "/og-image.png" },
+
+    // Twitter Card
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Hussein — Full-Stack Developer" },
+    {
+      name: "twitter:description",
+      content:
+        "Minimalist, futuristic personal portfolio featuring web development projects, technical blog posts, and interactive experiences.",
+    },
+    { name: "twitter:image", content: "/og-image.png" },
+  ];
+};
+
+// 2. Links Export (Icons & Web Fonts)
 export const links: Route.LinksFunction = () => [
+  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -44,6 +90,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
   const theme = data?.theme ?? "light";
 
+  // Schema.org Person Structured Data for Search Engine Rich Snippets
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Hussein",
+    jobTitle: "Full-Stack Developer",
+    url: "https://yourdomain.com",
+    sameAs: [
+      "https://github.com/your-username",
+      "https://linkedin.com/in/your-handle",
+      "https://twitter.com/your-handle",
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -53,14 +113,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head suppressHydrationWarning>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="theme-color"
+          content={theme === "dark" ? "#121418" : "#fbf9f4"}
+        />
         <Meta />
         <Links />
-        <title>Hussein</title>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body suppressHydrationWarning>
-        <Scripts />
         <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
         <ScrollRestoration />
+        <Scripts />
       </body>
     </html>
   );

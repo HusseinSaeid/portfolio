@@ -63,7 +63,7 @@ export default function NavBar() {
         className="flex items-center justify-center"
       />{" "}
       <div
-        className={`absolute top-full right-0 left-0 z-50 flex flex-col gap-5 bg-(--bg-main) p-6 transition-all duration-300 ease-in-out md:hidden ${
+        className={`absolute top-full right-0 left-0 z-50 flex flex-col gap-5 bg-(--bg-main) p-6  md:hidden ${
           isOpen
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-3 opacity-0 pointer-events-none"
@@ -76,7 +76,7 @@ export default function NavBar() {
             viewTransition
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
-              `font-audiowide transition-colors duration-300 ease-in-out ${
+              `font-audiowidet ${
                 isActive ? "text-(--color-brand)" : "hover:text-(--color-brand)"
               }`
             }
