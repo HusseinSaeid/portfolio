@@ -15,16 +15,16 @@ import { ThemeProvider } from "~/contexts/theme-context";
 // 1. Root Meta Export (Default fallback for all routes)
 export const meta: Route.MetaFunction = () => {
   return [
-    { title: "Hussein — Full-Stack Developer & Software Engineer" },
+    { title: "Hussein — Front-end Developer" },
     {
       name: "description",
       content:
-        "Minimalist, futuristic personal portfolio of Hussein — Full-Stack Developer specializing in React, React Router v7, TypeScript, and Sanity CMS.",
+        "Minimalist, futuristic personal portfolio of Hussein — Front-end Developer specializing in React, React Router v7, TypeScript, and Sanity CMS.",
     },
     {
       name: "keywords",
       content:
-        "Hussein, Portfolio, Web Developer, Full-Stack Engineer, React, React Router, TypeScript, Sanity CMS, Tailwind CSS",
+        "Hussein, Portfolio, Web Developer, Front-end Developer, React, React Router, TypeScript, NextJs, Sanity CMS, Tailwind CSS",
     },
     { name: "author", content: "Hussein" },
     { name: "robots", content: "index, follow" },
